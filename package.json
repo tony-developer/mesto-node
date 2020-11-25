@@ -1,0 +1,27 @@
+{
+  "name": "mesto-node",
+  "version": "1.0.0",
+  "description": "project Mesto with server NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tony-developer/mesto-node.git"
+  },
+  "keywords": [
+    "JS",
+    "javascript",
+    "node",
+    "nodeJS",
+    "ES6",
+    "webpack"
+  ],
+  "author": "Anton Serebriakov <anton.serebriackoff@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tony-developer/mesto-node/issues"
+  },
+  "homepage": "https://github.com/tony-developer/mesto-node#readme"
+}
