@@ -18,7 +18,7 @@
     "ES6",
     "webpack"
   ],
-  "author": "Anton Serebriakov <anton.serebriackoff@yandex.ru>",
+  "author": "<Anton Serebriakov> <anton.serebriackoff@yandex.ru>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tony-developer/mesto-node/issues"
