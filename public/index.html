@@ -1,16 +1,16 @@
-q<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="stylesheet" href="pages/index.css">
 </head>
 <body>
 <div class="root">
   <header class="header root__section">
-    <img src="./images/logo.svg" alt="mesto logo" class="logo">
+    <img src="images/logo.svg" alt="mesto logo" class="logo">
   </header>
   <div class="profile root__section">
     <div class="user-info">
@@ -43,7 +43,7 @@ q<!DOCTYPE html>
   </div>
   <div class="popup" id='popup-new'>
     <div class="popup__content">
-      <img src="./images/close.svg" alt="" class="popup__close">
+      <img src="images/close.svg" alt="" class="popup__close">
       <h3 class="popup__title">Новое место</h3>
       <form class="popup__form" name="new">
         <input id='new-name' type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" minlength="2" maxlength="30" required>
@@ -58,7 +58,7 @@ q<!DOCTYPE html>
 
   <div class="popup" id='popup-edit'>
     <div class="popup__content">
-      <img src="./images/close.svg" alt="" class="popup__close" id='popup-edit__close'>
+      <img src="images/close.svg" alt="" class="popup__close" id='popup-edit__close'>
       <h3 class="popup__title">Редактировать профиль</h3>
       <form class="popup__form" name="edit">
         <input id='user-name' type="text" name="name" class="popup__input popup__input_type_name" placeholder="Имя" minlength="2" required>
@@ -73,7 +73,7 @@ q<!DOCTYPE html>
 
   <div class="popup" id='popup-image'>
     <div class="popup__container">
-      <img src="./images/close.svg" alt='' class="popup__close popup__close_img">
+      <img src="images/close.svg" alt='' class="popup__close popup__close_img">
       <img src="" alt="" class="popup__image">
     </div>
   </div>
@@ -83,7 +83,7 @@ q<!DOCTYPE html>
 <script src="js/Api.js"></script>
 <script src='js/Card.js'></script>
 <script src='js/CardList.js'></script>
-<script src='js/initial-cards.js'></script>
+<script src='public/js/initial-cards.js'></script>
 <script src='js/Popup.js' ></script>
 <script src='js/PopupImage.js'></script>
 <script src='js/UserInfo.js'></script>
