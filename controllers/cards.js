@@ -12,58 +12,26 @@ module.exports.getCards = (req, res) => {
 };
 
 module.exports.createCard = (req, res) => {
-  const { name, link, ownerId } = req.body;
-  console.log(req.user._id);
+  const { name, link } = req.body;
 
   Card.create({ name, link, owner: req.user._id })
     .then((card) => res.send({
       data: card,
     }))
-    .catch((err) => res.status(500).send({
-      message: `Произошла ошибка ${err}`,
+    .catch(() => res.status(400).send({
+      message: 'Неверный запрос',
     }));
 };
 
 module.exports.deleteCard = (req, res) => {
-  Card.findByIdAndRemove(req.params.id)
-    .then((card) => res.send({
-      data: card,
-    }))
-    .catch((err) => res.status(500).send({
-      message: `Произошла ошибка ${err}`,
-    }));
-};
-
-module.exports.likeCard = (req, res) => {
-  Card.findByIdAndUpdate(
-    req.params.cardId,
-    { $addToSet: { likes: req.user._id } },
-    { new: true }
-  )
-  .orFail(new Error('Not valid cardId'))
-  .then((card) => res.status(200).send({ data: card }))
-  .catch((err) => {
-    if (err.message === 'Not valid cardId') {
-      res.status(404).send({ message: 'Такой карты нет в базе' });
-    } else {
-      res.status(500).send({ message: 'Ошибка при чтении файла' });
-    }
-  });
-};
-
-module.exports.deleteLikeCard = (req, res) => {
-  Card.findByIdAndUpdate(
-    req.params.cardId,
-    { $pull: { likes: req.user._id} },
-    { new: true }
-  )
-  .orFail(new Error('Not valid cardId'))
-  .then((card) => res.status(200).send({ data: card }))
-  .catch((err) => {
-    if (err.message === 'Not valid cardId') {
-      res.status(404).send({ message: 'Такой карты нет в базе' });
-    } else {
-      res.status(500).send({ message: 'Ошибка при чтении файла' });
-    }
-  });
+  Card.findByIdAndRemove(req.params.cardId)
+    .orFail(new Error('Not valid Id'))
+    .then((card) => res.send({ data: card }))
+    .catch((err) => {
+      if (err.message === 'Not valid Id') {
+        res.status(404).send({ message: 'Такого пользователя нет в базе' });
+      } else {
+        res.status(400).send({ message: 'Неверный запрос' });
+      }
+    });
 };

@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
       validator: (v) => validator.isURL(v),
       message: 'URL validation failed',
     },
-  }
+  },
 });
 
 module.exports = mongoose.model('user', userSchema);
