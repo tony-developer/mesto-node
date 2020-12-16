@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const userRouter = require('./routes/users.js');
 const cardRouter = require('./routes/cards.js');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3001 } = process.env;
 const app = express();
 
 app.use(bodyParser.json());

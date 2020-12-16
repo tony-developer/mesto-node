@@ -16,7 +16,7 @@ module.exports.createCard = (req, res) => {
   console.log(req.user._id);
 
   Card.create({ name, link, owner: req.user._id })
-    .then((user) => res.send({
+    .then((card) => res.send({
       data: card,
     }))
     .catch((err) => res.status(500).send({
@@ -41,7 +41,7 @@ module.exports.likeCard = (req, res) => {
     { new: true }
   )
   .orFail(new Error('Not valid cardId'))
-  .then((user) => res.status(200).send({ data: card }))
+  .then((card) => res.status(200).send({ data: card }))
   .catch((err) => {
     if (err.message === 'Not valid cardId') {
       res.status(404).send({ message: 'Такой карты нет в базе' });
@@ -53,12 +53,12 @@ module.exports.likeCard = (req, res) => {
 
 module.exports.deleteLikeCard = (req, res) => {
   Card.findByIdAndUpdate(
-    req,params.cardId,
+    req.params.cardId,
     { $pull: { likes: req.user._id} },
     { new: true }
   )
   .orFail(new Error('Not valid cardId'))
-  .then((user) => res.status(200).send({ data: card }))
+  .then((card) => res.status(200).send({ data: card }))
   .catch((err) => {
     if (err.message === 'Not valid cardId') {
       res.status(404).send({ message: 'Такой карты нет в базе' });
