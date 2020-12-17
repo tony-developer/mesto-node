@@ -30,8 +30,8 @@ app.use((req, res, next) => {
 app.use('/users', userRouter);
 app.use('/cards', cardRouter);
 app.use('/', (req, res) => {
-  res.status(500).json({
-    message: 'На сервере произошла ошибка',
+  res.status(404).json({
+    message: 'Не найдено',
   });
 });
 

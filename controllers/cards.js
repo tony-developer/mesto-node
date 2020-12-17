@@ -29,7 +29,7 @@ module.exports.deleteCard = (req, res) => {
     .then((card) => res.send({ data: card }))
     .catch((err) => {
       if (err.message === 'Not valid Id') {
-        res.status(404).send({ message: 'Такого пользователя нет в базе' });
+        res.status(404).send({ message: 'Такой карточки нет в базе' });
       } else {
         res.status(400).send({ message: 'Неверный запрос' });
       }
